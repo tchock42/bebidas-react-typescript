@@ -1,6 +1,6 @@
 # Bebidas react + typescript + meta-llama
 
-Este proyecto es una pequeña aplicación que consulta a la API de thecocktaildb para generar recetas a partir de una bebida alcólica.
+Este proyecto es una pequeña aplicación que consulta a la API de [thecocktaildb](https://www.thecocktaildb.com/api.php) para generar recetas a partir de una bebida alcólica.
 
 Hace uso de tailwind, typescript, axios, zustand, react router dom, zod y una implementación de OpenRouter para chat con IA para generar recetas.
 
@@ -34,7 +34,7 @@ App.tsx                 # Componente principal main.tsx          # Punto de entr
 ## ⚙️ Instalación y uso
 1. Clonar el repositorio:
   ```bash
-  git clone https://github.com/tchock42/cripto-react-zustand
+  git clone https://github.com/tchock42/bebidas-react-typescript.git
   cd clima-react
 
 2. Instalar dependencias:
