@@ -20,4 +20,8 @@ steps:
       ]
 
 images:
-  - 'gcr.io/$PROJECT_ID/bebidas-react'
+  - 'gcr.io/$PROJECT_ID/bebidas-react-481722'
+
+  # usar cloud logging para guardar logs  :
+options:
+  logging: CLOUD_LOGGING_ONLY
