@@ -18,6 +18,8 @@ steps:
         '--platform', 'managed',
         '--allow-unauthenticated'
       ]
+    env: 
+      - 'VITE_OPENROUTER_KEY=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'
 
 images:
   - 'gcr.io/$PROJECT_ID/bebidas-react-481722'
