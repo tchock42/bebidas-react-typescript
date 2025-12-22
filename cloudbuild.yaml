@@ -5,9 +5,9 @@ steps:
       - '-c'
       - |
         docker build \
-          --build-arg VITE_API_KEY=$$MY_SECRET_KEY \
+          --build-arg VITE_API_KEY=$$VITE_OPENROUTER_KEY \
           -t gcr.io/$PROJECT_ID/bebidas-react-481722 .
-    secretEnv: ['MY_SECRET_KEY']
+    secretEnv: ['VITE_OPENROUTER_KEY']
 
   # 2. Subir la imagen al registro de Google
   - name: 'gcr.io/cloud-builders/docker'
@@ -31,7 +31,7 @@ images:
 availableSecrets:
   secretManager:
   - versionName: projects/$PROJECT_ID/secrets/VITE_OPENROUTER_KEY/versions/latest
-    env: 'MY_SECRET_KEY'    # alias para el secret. Así se le referencía en steps
+    env: 'VITE_OPENROUTER_KEY'    # alias para el secret. Así se le referencía en steps
 
   # usar cloud logging para guardar logs  :
 options:
