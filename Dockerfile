@@ -11,6 +11,7 @@ ENV VITE_API_KEY=$VITE_API_KEY
 COPY package*.json ./
 RUN npm install
 COPY . .
+
 RUN npm run build
 
 # 2. Servidor ligero
