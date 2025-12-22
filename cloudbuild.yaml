@@ -22,6 +22,11 @@ steps:
 images:
   - 'gcr.io/$PROJECT_ID/bebidas-react-481722'
 
+availableSecrets:
+  secretManager:
+  - versionName: projects/$PROJECT_ID/secrets/VITE_OPENROUTER_KEY/versions/latest
+    env: 'MY_SECRET_KEY'
+
   # usar cloud logging para guardar logs  :
 options:
   logging: CLOUD_LOGGING_ONLY

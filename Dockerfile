@@ -2,6 +2,12 @@
 # 1. Construcción
 FROM node:18-alpine AS build
 WORKDIR /app
+
+#Declarar que se espera un argumento de construcción
+ARG VITE_API_KEY
+#Convertir el argumento en una variable de entorno para que vite la lea
+ENV VITE_API_KEY=$VITE_API_KEY
+
 COPY package*.json ./
 RUN npm install
 COPY . .
