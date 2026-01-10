@@ -66,6 +66,13 @@ npm run preview
 - Formulario con información de país y ciudad
 - Consulta mediante la api de Open Weather
 
+## 📦 CI/CD
+Este proyecto se despliega automáticamente en Github Pages:
+- Cada push a `main` dispara linting, pruebas y build.
+- Si todo pasa, Github Pages publica la nueva versión en producción.
+- Integración con GitHub Actions asegura calidad antes del deploy.
+
+## Status badge
 
 ## 📸 Demo
 ([Página en Vercel]())

@@ -1,0 +1,52 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ] # Se ejecuta solo cuando subes a la rama principal
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci # Usa 'ci' en lugar de 'install' para entornos de CI
+
+      - name: 1. Linter (Calidad de código)
+        run: npm run lint
+
+      - name: 2. Tests (Happy DOM)
+        run: npm run test
+
+      - name: 3. Build (Compilación)
+        run: npm run build
+
+      - name: Subir artefacto para deploy
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Asegúrate de que coincida con tu carpeta de salida
+
+  deploy:
+    needs: build-and-test # Solo corre si el job anterior terminó con éxito
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
