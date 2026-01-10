@@ -21,7 +21,7 @@ const Header = () => {
     
     useEffect(() => {
         fetchCategories()                                                   // consulta la API cuando la app carga
-    }, []);
+    }, [fetchCategories]);  // [] genera error de lint de exhaustive-deps, [fetchCategories] es estable porque viene de store
 
     // funcion para modificar state local al escribir en el input y select
     const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {   

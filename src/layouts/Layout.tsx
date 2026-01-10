@@ -9,7 +9,7 @@ export default function Layout() {
     const loadFromStorage = useAppStore(state => state.loadFromStorage) // extrae funcion de LS
     useEffect(() => {
         loadFromStorage()                                               // carga de LS los favoritos guardados
-    }, []);
+    }, [loadFromStorage]);          // [] genera error de lint de exhaustive-deps, [loadFromStorage] es estable porque viene de store
     return (
 
         <>
