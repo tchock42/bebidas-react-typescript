@@ -67,14 +67,15 @@ npm run preview
 - Consulta mediante la api de Open Weather
 
 ## 📦 CI/CD
-Este proyecto se despliega automáticamente en Github Pages:
+Este proyecto se despliega automáticamente en netlify y realiza ci con GitHub Actions:
 - Cada push a `main` dispara linting, pruebas y build.
 - Si todo pasa, Github Pages publica la nueva versión en producción.
 - Integración con GitHub Actions asegura calidad antes del deploy.
 
 ## Status badge
+[![CI Pipeline](https://github.com/tchock42/bebidas-react-typescript/actions/workflows/ci.yml/badge.svg)](https://github.com/tchock42/bebidas-react-typescript/actions/workflows/ci.yml)
 
 ## 📸 Demo
-([Página en Vercel]())
+([Página en Netlify](https://bebidas-react-typescript-jgc.netlify.app/))
 
 
